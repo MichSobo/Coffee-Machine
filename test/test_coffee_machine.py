@@ -1,6 +1,6 @@
 import unittest
 
-from coffee_machine import CoffeeMachine
+from source.coffee_machine import CoffeeMachine
 
 
 class TestCoffeeMachine(unittest.TestCase):
