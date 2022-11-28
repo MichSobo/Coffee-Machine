@@ -11,17 +11,12 @@ class TestCoffeeMachine(unittest.TestCase):
         self.machine = CoffeeMachine(500, 250, 100, 10, 300)
 
     def test_can_prepare(self):
-        """Test can_prepare method with sufficient ingredients."""
-        answer = True, None
+        """can_prepare() tests with sufficient ingredients"""
+        machine = CoffeeMachine(1e6, 1e6, 1e6, 1e6, 1e6)
 
-        output = self.machine.can_prepare('1')
-        self.assertEqual(answer, output)
-
-        output = self.machine.can_prepare('2')
-        self.assertEqual(answer, output)
-
-        output = self.machine.can_prepare('3')
-        self.assertEqual(answer, output)
+        self.assertTrue(machine.can_prepare('1')[0])
+        self.assertTrue(machine.can_prepare('2')[0])
+        self.assertTrue(machine.can_prepare('3')[0])
 
     def test_can_prepare_water(self):
         """Test can_prepare method with missing water."""
