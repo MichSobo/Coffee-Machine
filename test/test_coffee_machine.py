@@ -4,7 +4,7 @@ from source.coffee_machine import CoffeeMachine
 
 
 class TestCoffeeMachine(unittest.TestCase):
-    """Class for testing Coffee class."""
+    """Test case for testing CoffeeMachine class' basic functionalities."""
 
     def setUp(self):
         """Initialize a test with default parameters"""
