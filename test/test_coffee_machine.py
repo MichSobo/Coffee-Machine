@@ -19,14 +19,18 @@ class TestCoffeeMachine(unittest.TestCase):
         self.assertTrue(machine.can_prepare('3')[0])
 
     def test_can_prepare_water(self):
-        """Test can_prepare method with missing water."""
-        self.machine.water = 249
+        """can_prepare() tests with missing water"""
+        required_water = {}
+        for coffee_id, coffee_properties in CoffeeMachine._COFFEE_TYPES.items():
+            required_water[coffee_id] = coffee_properties['water']
+
+        self.machine.water = required_water['1'] - 1
         self.assertEqual((False, 'water'), self.machine.can_prepare('1'))
 
-        self.machine.water = 349
+        self.machine.water = required_water['2'] - 1
         self.assertEqual((False, 'water'), self.machine.can_prepare('2'))
 
-        self.machine.water = 199
+        self.machine.water = required_water['3'] - 1
         self.assertEqual((False, 'water'), self.machine.can_prepare('3'))
 
     def test_can_prepare_milk(self):
