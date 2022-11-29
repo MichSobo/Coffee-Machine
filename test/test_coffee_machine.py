@@ -64,7 +64,7 @@ class TestCoffeeMachine(unittest.TestCase):
         self.assertEqual((False, 'coffee'), self.machine.can_prepare('3'))
 
     def test_can_prepare_cups(self):
-        """Test can_prepare method with missing cups."""
+        """can_prepare() tests with missing cups"""
         self.machine.cups = 0
         self.assertEqual((False, 'cups'), self.machine.can_prepare('1'))
         self.assertEqual((False, 'cups'), self.machine.can_prepare('2'))
